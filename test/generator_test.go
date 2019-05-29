@@ -40,3 +40,11 @@ func TestAppendOne(t *testing.T) {
     word := "test"
     checkRule(t, word, rule, expected)
 }
+
+
+func TestPrependOne(t *testing.T) {
+    rule := "^1"
+    expected := "1test"
+    word := "test"
+    checkRule(t, word, rule, expected)
+}
