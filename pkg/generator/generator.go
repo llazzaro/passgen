@@ -14,7 +14,7 @@ func ProcessRule(word string, rule string) (string, error) {
     if len(word) < 1 {
         return "", nil
     }
-
+    res = word
     for _, char := range rule {
         if char == ' ' {
             continue
@@ -31,7 +31,7 @@ func ProcessRule(word string, rule string) (string, error) {
         }  else if toggleN {
             return "", errors.New("Not implemented")
         } else if char == 'c' {
-            res += strings.Title(word)
+            res = strings.Title(word)
         } else if char == 'd' {
             res += word
         } else if char == '^' {
@@ -39,11 +39,11 @@ func ProcessRule(word string, rule string) (string, error) {
         } else if char == '$' {
             appen = true
         } else if char == 'l' {
-            res += strings.ToLower(word)
+            res = strings.ToLower(word)
         } else if char == 'u' {
-            res += strings.ToUpper(word)
+            res = strings.ToUpper(word)
         } else if char == 'C' {
-            res += strings.ToLower(string(word[0]))
+            res = strings.ToLower(string(word[0]))
             res += strings.ToUpper(word[1:])
         } else if char == 't' {
             return "", errors.New("Not implemented")

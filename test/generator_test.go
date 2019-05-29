@@ -17,6 +17,7 @@ func checkRule(t *testing.T, word string, rule string, expected string) {
 
 }
 
+
 func TestSimpleGenerationFromRule(t *testing.T) {
     rule := "c $2$0$1$9"
     expected := "Test2019"
@@ -24,9 +25,18 @@ func TestSimpleGenerationFromRule(t *testing.T) {
     checkRule(t, word, rule, expected)
 }
 
+
 func TestDoNothing(t *testing.T) {
     rule := ":"
     expected := "test"
+    word := "test"
+    checkRule(t, word, rule, expected)
+}
+
+
+func TestAppendOne(t *testing.T) {
+    rule := "$1"
+    expected := "test1"
     word := "test"
     checkRule(t, word, rule, expected)
 }
