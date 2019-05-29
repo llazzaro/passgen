@@ -16,7 +16,9 @@ func ProcessRule(word string, rule string) (string, error) {
     }
 
     for _, char := range rule {
-        if char == ':' {
+        if char == ' ' {
+            continue
+        } else if char == ':' {
             continue
         } else if appen {
             appendStr += string(char)
@@ -34,7 +36,6 @@ func ProcessRule(word string, rule string) (string, error) {
             prepend = true
         } else if char == '$' {
             appen = true
-            res += word
         } else if char == 'l' {
             res += strings.ToLower(word)
         } else if char == 'u' {
