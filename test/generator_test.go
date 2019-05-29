@@ -5,15 +5,28 @@ import (
     "github.com/llazzaro/passgen/pkg/generator"
 )
 
-func TestSimpleGenerationFromRule(t *testing.T) {
+func checkRule(t *testing.T, word string, rule string, expected string) {
     input := make(chan string)
-    ruleCase := "c $2$0$1$9"
-    output := generator.Generate(input, ruleCase)
-    input <- "test"
+    output := generator.Generate(input, rule)
+    input <- word
 
-    expected := "Test2019"
     found := <-output
     if found != expected {
         t.Errorf("Expected %s, found %s ", expected, found)
     }
+
+}
+
+func TestSimpleGenerationFromRule(t *testing.T) {
+    rule := "c $2$0$1$9"
+    expected := "Test2019"
+    word := "test"
+    checkRule(t, word, rule, expected)
+}
+
+func TestDoNothing(t *testing.T) {
+    rule := ":"
+    expected := "test"
+    word := "test"
+    checkRule(t, word, rule, expected)
 }

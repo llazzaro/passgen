@@ -19,7 +19,9 @@ func ProcessRule(word string, rule string) (string, error) {
         if char == ' ' {
             continue
         } else if char == ':' {
-            continue
+            // do nothing
+            res = word
+            break
         } else if appen {
             appendStr += string(char)
             appen = false
