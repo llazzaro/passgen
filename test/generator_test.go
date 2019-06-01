@@ -48,3 +48,10 @@ func TestPrependOne(t *testing.T) {
     word := "test"
     checkRule(t, word, rule, expected)
 }
+
+func TestInsertChar(t *testing.T) {
+    rule := "i1!"
+    expected := "t!est"
+    word := "test"
+    checkRule(t, word, rule, expected)
+}

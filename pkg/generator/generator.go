@@ -49,6 +49,10 @@ func ProcessRule(word string, rule string) (string, error) {
             return "", errors.New("Not implemented")
         } else if char == 'T' {
             return "", errors.New("Not implemented")
+        } else if char == 'i' {
+            return "", errors.New("Not implemented")
+        } else {
+            return "", errors.New("Not implemented")
         }
     }
     return prependStr + res + appendStr, nil
