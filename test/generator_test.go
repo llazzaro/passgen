@@ -2,7 +2,7 @@ package test
 
 import (
     "testing"
-    "github.com/llazzaro/passgen/pkg/generator"
+    "gitlab.com/llazzaro/passgen/pkg/generator"
 )
 
 func checkRule(t *testing.T, word string, rule string, expected string) {

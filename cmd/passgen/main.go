@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/llazzaro/passgen/pkg/generator"
+    "gitlab.com/llazzaro/passgen/pkg/generator"
 )
 
 func main () {
